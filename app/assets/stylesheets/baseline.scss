@@ -1,0 +1,76 @@
+/* From https://github.com/RobOwenKing/css-baseline */
+
+*,
+*::before,
+*::after {
+  /* Make layouting more intuitive */
+  box-sizing: border-box;
+}
+
+* {
+  /*
+   * Remove any browser-set margin
+   * Use a low specificity selector to be easily overruled
+  */
+  margin: 0;
+}
+
+body {
+  /* Ensure the body fills the viewport vertically */
+  min-height: 100vh;
+  /* Prioritise speed over legibility & geometric precision (disable kerning and ligatures) */
+  text-rendering: optimizeSpeed;
+  /*
+   * Alter text line-height to meet #a11y recommendation of >= 1.5
+   * Note: This is intended for paragraph text, and can be reduced on headings
+  */
+  line-height: 1.5;
+}
+
+img,
+picture,
+video {
+  /* Make visual elements easier to work with */
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  /* Give a form font default much more likely to be what you want */
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Avoid long words and URLs overspilling narrow containers horizontally */
+  overflow-wrap: break-word;
+}
+
+html:focus-within {
+  /* Scroll instead of jumping when moving around the page */
+  scroll-behavior: smooth;
+}
+
+/* Respect preference for no animation, etc */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
