@@ -1,0 +1,1 @@
+Rails app generated with a [template](https://github.com/RobOwenKing/rails-templates) by [RobOwenKing](http://robowenking.com/) based on [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
