@@ -1,5 +1,7 @@
 /* From https://github.com/RobOwenKing/css-baseline */
 
+@use "variables" as *;
+
 *,
 *::before,
 *::after {
@@ -25,7 +27,9 @@ body {
    * Note: This is intended for paragraph text, and can be reduced on headings
   */
   line-height: 1.5;
-  color: green;
+
+  color: $clr-text;
+  background-color: $clr-bg;
 }
 
 img,
