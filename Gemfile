@@ -50,7 +50,7 @@ gem "devise"
 gem "autoprefixer-rails"
 # Make forms easier (https://github.com/heartcombo/simple_form)
 gem "simple_form", github: "heartcombo/simple_form"
-# Enable use of SCSS
+# Enable use of SCSS (https://github.com/tablecheck/dartsass-sprockets)
 gem 'dartsass-sprockets'
 
 # Icons (https://github.com/FortAwesome/font-awesome-sass)
