@@ -1,31 +1,33 @@
 .container-hero-image {
-  width: 30px;
+  width: 300px;
+
+  position: relative;
 
   margin-left: auto;
   margin-right: auto;
 }
 
 .container-hero-image img {
+  position: absolute;
+
+  opacity: 0;
   mask-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1),
     75%,
     rgba(0, 0, 0, 0)
   );
-
-  opacity: 0;
 }
 
-@for $i from 1 through 3 {
-  .container-hero-image img:nth-child(#{$i}) {
-    animation: 1s calc(calc(2s * #{$i}) - 2s) fade;
-
-    @if $i == 3 {
-      animation-fill-mode: forwards;
-    } @else {
-      animation: 1s calc(calc(2s * #{$i}) - 1s) reverse fade;
-    }
+@for $i from 1 to 3 {
+  .container-hero-image img:nth-of-type(#{$i}) {
+    animation: 1s calc(calc(2s * #{$i}) - 2s) fade,
+      1s calc(calc(2s * #{$i}) - 1s) reverse fade;
   }
+}
+
+.container-hero-image img:last-of-type {
+  animation: 1s calc(calc(2s * 3) - 2s) forwards fade;
 }
 
 @keyframes fade {
