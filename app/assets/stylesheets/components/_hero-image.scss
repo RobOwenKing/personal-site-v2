@@ -19,15 +19,18 @@
   );
 }
 
+$step: 0.5s;
+$step-2: $step * 2;
+
 @for $i from 1 to 3 {
   .container-hero-image img:nth-of-type(#{$i}) {
-    animation: 1s calc(calc(2s * #{$i}) - 2s) fade,
-      1s calc(calc(2s * #{$i}) - 1s) reverse fade;
+    animation: $step calc(calc($step-2 * #{$i}) - $step-2) fade,
+      $step calc(calc($step-2 * #{$i}) - $step) reverse fade;
   }
 }
 
 .container-hero-image img:last-of-type {
-  animation: 1s calc(calc(2s * 3) - 2s) forwards fade;
+  animation: $step calc(calc($step-2 * 3) - $step-2) forwards fade;
 }
 
 @keyframes fade {
