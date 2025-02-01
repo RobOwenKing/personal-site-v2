@@ -1,15 +1,41 @@
 .container-hero-image {
-  width: 300px;
+  width: 30px;
 
   margin-left: auto;
   margin-right: auto;
 }
 
-.container-hero-image:nth-child(n) {
+.container-hero-image img {
   mask-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 1),
     75%,
     rgba(0, 0, 0, 0)
   );
+
+  opacity: 0;
+}
+
+@for $i from 1 through 3 {
+  .container-hero-image img:nth-child(#{$i}) {
+    animation: 1s calc(calc(2s * #{$i}) - 2s) fade;
+
+    @if $i == 3 {
+      animation-fill-mode: forwards;
+    } @else {
+      animation: 1s calc(calc(2s * #{$i}) - 1s) reverse fade;
+    }
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
