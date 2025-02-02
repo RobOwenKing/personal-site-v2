@@ -1,0 +1,46 @@
+.container-hero-image {
+  width: 300px;
+
+  position: relative;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-hero-image img {
+  position: absolute;
+
+  opacity: 0;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    75%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+$step: 0.5s;
+$step-2: $step * 2;
+
+@for $i from 1 to 3 {
+  .container-hero-image img:nth-of-type(#{$i}) {
+    animation: $step calc(calc($step-2 * #{$i}) - $step-2) fade,
+      $step calc(calc($step-2 * #{$i}) - $step) reverse fade;
+  }
+}
+
+.container-hero-image img:last-of-type {
+  animation: $step calc(calc($step-2 * 3) - $step-2) forwards fade;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
