@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  get 'cpd/index'
-  get 'cpd/new'
-  get 'cpd/create'
-  get 'cpd/edit'
-  get 'cpd/update'
-  get 'cpd/delete'
+  resources :cpd, except: [:show]
+  
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
