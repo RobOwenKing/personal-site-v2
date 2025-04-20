@@ -1,6 +1,6 @@
 class CPDController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
-  before_action :set_cpd, only: [:edit, :update, :destroy]
+  # before_action :authenticate_user!, except: [:index]
+  before_action :set_cpd, only: [:edit, :update, :delete]
 
   def index
     @cpds = CPD.all
