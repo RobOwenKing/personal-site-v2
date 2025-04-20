@@ -1,9 +1,9 @@
 <h1>New CPD entry</h1>
 
-<%= simple_form_for(@cpd, url: new_cpd_path) do |f| %>
+<%= simple_form_for @cpd do |f| %>
   <%= f.input :title %>
   <%= f.input :details %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
-  <%= f.button :submit %>
+  <%= f.button :submit, data: { turbo: false } %>
 <% end %>
